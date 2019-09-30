@@ -1,0 +1,410 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "version": "1.0.0",
+        "title": "Neo Bank"
+    },
+    "host": "neobank.marketsimplified.com",
+    "basePath": "/api",
+    "schemes": [
+        "https"
+    ],
+    "consumes": [
+        "application/json"
+    ],
+    "produces": [
+        "application/json"
+    ],
+    "paths": {
+        "/admin/login": {
+            "post": {
+                "tags": [
+                    "Admin"
+                ],
+                "description": "login admin",
+                "parameters": [
+                    {
+                        "name": "admin",
+                        "in": "body",
+                        "description": "admin login",
+                        "schema": {
+                            "$ref": "#/definitions/adminlogin"
+                        }
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "success"
+                    }
+                }
+            }
+        },
+        "/admin/logout": {
+            "get": {
+                "tags": [
+                    "Admin"
+                ],
+                "description": "logout Admin",
+                "parameters": [
+                    {
+                        "name": "authorization",
+                        "in": "header",
+                        "type": "string",
+                        "required": true
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "success"
+                    }
+                }
+            }
+        },
+        "/admin/addcustomer": {
+            "post": {
+                "tags": [
+                    "Admin"
+                ],
+                "description": "add customer",
+                "parameters": [
+                    {
+                        "name": "authorization",
+                        "in": "header",
+                        "type": "string",
+                        "required": "true"
+                    },
+                    {
+                        "name": "customer",
+                        "in": "body",
+                        "description": "add new customer",
+                        "schema": {
+                            "$ref": "#/definitions/addcustomer"
+                        }
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "success"
+                    }
+                }
+            }
+        },
+        "/admin/editcustomer": {
+            "put": {
+                "tags": [
+                    "Admin"
+                ],
+                "description": "update customer",
+                "parameters": [
+                    {
+                        "name": "authorization",
+                        "in": "header",
+                        "type": "string",
+                        "required": "true"
+                    },
+                    {
+                        "name": "customer update",
+                        "in": "body",
+                        "description": "customer update",
+                        "schema": {
+                            "$ref": "#/definitions/updatecustomer"
+                        }
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "success"
+                    }
+                }
+            }
+        },
+        "/admin/getcustomers": {
+            "get": {
+                "tags": [
+                    "Admin"
+                ],
+                "parameters": [
+                    {
+                        "name": "authorization",
+                        "in": "header",
+                        "type": "string",
+                        "required": true
+                    }
+                ],
+                "description": "delete customers",
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "success"
+                    }
+                }
+            }
+        },
+        "/admin/getcustomerdetails/{customer_id}": {
+            "get": {
+                "tags": [
+                    "Admin"
+                ],
+                "parameters": [
+                    {
+                        "name": "authorization",
+                        "in": "header",
+                        "type": "string",
+                        "required": true
+                    },
+                    {
+                        "name": "customer_id",
+                        "in": "path",
+                        "description": "customer id",
+                        "required": true
+                    }
+                ],
+                "description": "delete customers",
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "success"
+                    }
+                }
+            }
+        },
+        "/admin/deletecustomer/{customer_id}": {
+            "delete": {
+                "tags": [
+                    "Admin"
+                ],
+                "parameters": [
+                    {
+                        "name": "authorization",
+                        "in": "header",
+                        "type": "string",
+                        "required": "true"
+                    },
+                    {
+                        "name": "customer_id",
+                        "in": "path",
+                        "description": "customer id",
+                        "required": true
+                    }
+                ],
+                "description": "delete customers",
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "success"
+                    }
+                }
+            }
+        },
+        "/admin/addaccount": {
+            "post": {
+                "tags": [
+                    "Admin"
+                ],
+                "description": "Add bank account",
+                "parameters": [
+                    {
+                        "name": "authorization",
+                        "in": "header",
+                        "type": "string",
+                        "required": "true"
+                    },
+                    {
+                        "name": "bank account",
+                        "in": "body",
+                        "description": "add bank account",
+                        "schema": {
+                            "$ref": "#/definitions/addaccount"
+                        }
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "201": {
+                        "description": "success"
+                    }
+                }
+            }
+        },
+        "/admin/updateaccount": {
+            "put": {
+                "tags": [
+                    "Admin"
+                ],
+                "description": "Update bank account",
+                "parameters": [
+                    {
+                        "name": "authorization",
+                        "in": "header",
+                        "type": "string",
+                        "required": "true"
+                    },
+                    {
+                        "name": "update bank account",
+                        "in": "body",
+                        "description": "update bank account",
+                        "schema": {
+                            "$ref": "#/definitions/updateaccount"
+                        }
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "success"
+                    }
+                }
+            }
+        },
+        "/admin/deleteaccount/{account_id}": {
+            "delete": {
+                "tags": [
+                    "Admin"
+                ],
+                "parameters": [
+                    {
+                        "name": "authorization",
+                        "in": "header",
+                        "type": "string",
+                        "required": true
+                    },
+                    {
+                        "name": "account_id",
+                        "in": "path",
+                        "description": "account_id",
+                        "required": true
+                    }
+                ],
+                "description": "delete account",
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "success"
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "adminlogin": {
+            "required": [
+                "accountid",
+                "mpin"
+            ],
+            "properties": {
+                "data": {
+                    "type": "object",
+                    "properties": {
+                        "admin_id": {
+                            "type": "string",
+                            "uniqueItems": true
+                        },
+                        "admin_password": {
+                            "type": "string",
+                            "uniqueItems": true
+                        }
+                    }
+                }
+            }
+        },
+        "addcustomer": {
+            "properties": {
+                "data": {
+                    "type": "object",
+                    "properties": {
+                        "customer_name": {
+                            "type": "string"
+                        },
+                        "customer_email": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
+        "updatecustomer": {
+            "properties": {
+                "data": {
+                    "type": "object",
+                    "properties": {
+                        "customer_name": {
+                            "type": "string"
+                        },
+                        "customer_email": {
+                            "type": "string"
+                        },
+                        "customer_id": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
+        "addaccount": {
+            "properties": {
+                "data": {
+                    "type": "object",
+                    "properties": {
+                        "account_type": {
+                            "type": "string"
+                        },
+                        "customer_id": {
+                            "type": "string"
+                        },
+                        "amount": {
+                            "type": "number"
+                        },
+                        "customer_name": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
+        "updateaccount": {
+            "properties": {
+                "data": {
+                    "type": "object",
+                    "properties": {
+                        "account_id": {
+                            "type": "string"
+                        },
+                        "account_type": {
+                            "type": "string"
+                        },
+                        "customer_id": {
+                            "type": "string"
+                        },
+                        "amount": {
+                            "type": "number"
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

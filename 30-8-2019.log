@@ -1,0 +1,2 @@
+[2019-09-30T10:48:33.925] [DEBUG] data - {"data":{"session_id":"eyJzZXNzaW9uX2lkIjoiZmNmZTNkZjQtZDMzZS00ZDJiLWEwNGUtOGU5MTE2MTQwMTExIiwidXNlcl9pZCI6IjEyMzQ1NiJ9","admin_name":"admin","admin_email":"admin@gmail.com","admin_id":"123456"},"infoID":"0","infoMsg":"Login Success"}
+[2019-09-30T10:48:59.156] [DEBUG] data - {"data":{"session_id":"eyJzZXNzaW9uX2lkIjoiMTM2NjQxZjUtYzEyNS00MTlhLWJmNzctNjliMTViYTg5ZmY2IiwidXNlcl9pZCI6IjEyMzQ1NiJ9","admin_name":"admin","admin_email":"admin@gmail.com","admin_id":"123456"},"infoID":"0","infoMsg":"Login Success"}
